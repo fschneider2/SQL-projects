@@ -1,0 +1,56 @@
+Mapeamento :
+
+Serão 5 tabelas:
+
+-- Alunos, que irá receber as sequintes informações:
+Matricula -  será o PK
+Observação,
+Nome,
+Endereço,
+Data da ultima avaliação média,
+Data nascimento,
+Peso,
+Altura,
+Telefone.
+
+-- Professores, que irá receber as sequintes informações:
+id - será a PK
+Nome,
+CPF - Unique,
+Data Nascimento, 
+Titulação (Se é bacharel ou licenciatura),
+Registro profissional - UNIQUE,
+Fone principal, 
+Outros fones, Maior número possivel.
+
+-- Turmas vai receber as seguintes informações:
+Id - PK,
+Tipo de atividade (Ginastica, Dança, artes marciais ou musculação), isso pode ser uma tabela dentro do banco, ou um campo na tabela turma, vou deixar como um campo na tabela turma.
+Quantidade de alunos,
+horario da aula,
+data inicial,
+data final,
+duração da aula,
+Quem vai ser o aluno monitor- ele é unico para a tabela, Fk do campo matricula_alunos
+Professor , pode atender mais de uma turma. Fk do campo id_professor
+
+--Aula
+
+Acho nescessaria essa tabela, para que, os alunos sejam incluidos nas turmas, assim, varios alunos podem ser incluidos em cada turma cadastrada.
+os campos:
+ID - PK
+Id turma - FK do id_turma
+id matricula do aluno - FK fazendo ligação com a matricula da tabela alunos.
+
+-- Presença   
+
+É necessario criar uma tabela de presença, para todos os alunos e suas aulas. Como a tabela Aula, possui uma linha, ou um id para cada aluno que esta matriculado em alguma turma, vou so criar uma tabela para presença.
+
+Id_aula - FK, para poder pegar as informações do aluno e da turma, que estão na tabela aula.
+data - data da aula
+Presença - Bool, se o aluno veio, ou não.
+
+Pensando em facilitar a avaliação, conpartilho 4 scripts, 1 completo, com a criação das tabelas, manipulação de dados e consultas.
+E como solicitado no material da avaliação final, 3 scripts, mas é a mesma informação.
+
+
